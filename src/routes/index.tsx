@@ -69,7 +69,7 @@ function Index() {
   const [frukostSkickad, setFrukostSkickad] = useState(false);
 
   // Felanmälan
-  const [felTyp, setFelTyp] = useState(felTyper[0]);
+  const [felTyp, setFelTyp] = useState<string>(felTyper[0]);
   const [felRum, setFelRum] = useState("");
   const [felText, setFelText] = useState("");
   const [felSkickad, setFelSkickad] = useState(false);
