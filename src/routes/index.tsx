@@ -33,7 +33,7 @@ const felTyper = ["Värme / kyla", "Vatten / avlopp", "El / belysning", "Lås / 
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <label className="glass-field block rounded-xl px-3 py-2">
-      <span className="block text-[10px] font-medium uppercase tracking-wide text-mist">{label}</span>
+      <span className="block text-xs font-medium uppercase tracking-wide text-mist">{label}</span>
       {children}
     </label>
   );
@@ -45,15 +45,15 @@ function Confirm({ children }: { children: React.ReactNode }) {
       <span className="mt-0.5 grid size-4 shrink-0 place-items-center rounded-full bg-aurora/60">
         <Check className="size-2.5 text-ink" strokeWidth={3} />
       </span>
-      <p className="text-sm text-ink/80">{children}</p>
+      <p className="text-base text-ink/80">{children}</p>
     </div>
   );
 }
 
-const inputCls = "w-full bg-transparent text-sm text-ink outline-none placeholder:text-mist/60";
-const selectCls = "w-full appearance-none bg-transparent text-sm text-ink outline-none";
+const inputCls = "w-full bg-transparent text-base text-ink outline-none placeholder:text-mist/60";
+const selectCls = "w-full appearance-none bg-transparent text-base text-ink outline-none";
 const btnCls =
-  "w-full rounded-xl bg-ink py-3 text-sm font-medium text-frost transition-colors hover:bg-ink/85";
+  "w-full rounded-xl bg-ink py-3 text-base font-medium text-frost transition-colors hover:bg-ink/85";
 
 function Index() {
   // Bastu
@@ -95,17 +95,17 @@ function Index() {
       <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
         <div className="flex items-center gap-3">
           <div className="glass-field grid size-9 place-items-center rounded-xl">
-            <span className="font-display text-lg text-mist">N</span>
+            <span className="font-display text-2xl text-mist">N</span>
           </div>
-          <span className="font-display text-2xl tracking-tight text-ink">Nordlys</span>
+          <span className="font-display text-3xl tracking-tight text-ink">Nordlys</span>
         </div>
-        <nav className="hidden items-center gap-8 text-sm text-mist md:flex">
+        <nav className="hidden items-center gap-8 text-base text-mist md:flex">
           <a href="#bastu" className="transition-colors hover:text-ink">Bastu</a>
           <a href="#frukost" className="transition-colors hover:text-ink">Frukost</a>
           <a href="#felanmalan" className="transition-colors hover:text-ink">Felanmälan</a>
           <a href="#norrskenslarm" className="transition-colors hover:text-ink">Norrsken</a>
         </nav>
-        <span className="glass-field rounded-full px-5 py-2 text-sm font-medium text-ink shadow-sm">
+        <span className="glass-field rounded-full px-5 py-2 text-base font-medium text-ink shadow-sm">
           Rum 204
         </span>
       </header>
@@ -113,14 +113,14 @@ function Index() {
       <main className="relative z-10 mx-auto max-w-6xl px-6 pb-24">
         {/* Hero */}
         <section className="pt-10 pb-14 md:pt-16 md:pb-20">
-          <div className="glass-field mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium uppercase tracking-[0.15em] text-mist">
+          <div className="glass-field mb-8 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-sm font-medium uppercase tracking-[0.15em] text-mist">
             <span className="size-1.5 rounded-full bg-aurora" />
             Fjällhotell · Abisko, 68°N
           </div>
-          <h1 className="max-w-4xl font-display text-5xl leading-[1.05] tracking-tight text-ink md:text-7xl">
+          <h1 className="max-w-4xl font-display text-6xl leading-[1.05] tracking-tight text-ink md:text-8xl">
             Välkommen till <span className="italic text-aurora">Nordlys</span> — där fjället möter himlen.
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-mist">
+          <p className="mt-6 max-w-xl text-xl leading-relaxed text-mist">
             Värme, ljus och stillhet. Hantera hela din vistelse här: boka bastun, beställ frukost,
             anmäl ett fel eller låt oss väcka dig när norrskenet dansar.
           </p>
@@ -135,8 +135,8 @@ function Index() {
                 <Flame className="size-5 text-ink/70" />
               </span>
               <div>
-                <p className="font-display text-xl text-ink">Boka bastu</p>
-                <p className="text-xs text-mist">Cederbastu · 85°</p>
+                <p className="font-display text-2xl text-ink">Boka bastu</p>
+                <p className="text-sm text-mist">Cederbastu · 85°</p>
               </div>
             </div>
             <form
@@ -145,7 +145,7 @@ function Index() {
                 setBastuBokad(true);
               }}
             >
-              <div className="mb-4 grid grid-cols-2 gap-2 text-sm">
+              <div className="mb-4 grid grid-cols-2 gap-2 text-base">
                 <Field label="Datum">
                   <input
                     type="date"
@@ -197,8 +197,8 @@ function Index() {
                 <Croissant className="size-5 text-ink/70" />
               </span>
               <div>
-                <p className="font-display text-xl text-ink">Beställ frukost</p>
-                <p className="text-xs text-mist">Serveras på rummet 07–10</p>
+                <p className="font-display text-2xl text-ink">Beställ frukost</p>
+                <p className="text-sm text-mist">Serveras på rummet 07–10</p>
               </div>
             </div>
             <form
@@ -207,7 +207,7 @@ function Index() {
                 setFrukostSkickad(true);
               }}
             >
-              <div className="mb-3 grid grid-cols-2 gap-2 text-sm">
+              <div className="mb-3 grid grid-cols-2 gap-2 text-base">
                 <Field label="Tid">
                   <select
                     value={frukostTid}
@@ -230,7 +230,7 @@ function Index() {
                   />
                 </Field>
               </div>
-              <div className="mb-4 space-y-2 text-sm">
+              <div className="mb-4 space-y-2 text-base">
                 {frukostAlternativ.map((item) => (
                   <label
                     key={item}
@@ -263,8 +263,8 @@ function Index() {
                 <Wrench className="size-5 text-ink/70" />
               </span>
               <div>
-                <p className="font-display text-xl text-ink">Anmäl ett fel</p>
-                <p className="text-xs text-mist">Vi åtgärdar inom 2h</p>
+                <p className="font-display text-2xl text-ink">Anmäl ett fel</p>
+                <p className="text-sm text-mist">Vi åtgärdar inom 2h</p>
               </div>
             </div>
             <form
@@ -273,7 +273,7 @@ function Index() {
                 setFelSkickad(true);
               }}
             >
-              <div className="mb-4 space-y-2 text-sm">
+              <div className="mb-4 space-y-2 text-base">
                 <Field label="Typ av fel">
                   <select
                     value={felTyp}
@@ -324,14 +324,14 @@ function Index() {
         >
           <div className="grid gap-6 p-6 md:grid-cols-[1.3fr_1fr] md:p-8">
             <div>
-              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-aurora/20 px-3 py-1 text-xs font-medium uppercase tracking-wide text-ink">
+              <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-aurora/20 px-3 py-1 text-sm font-medium uppercase tracking-wide text-ink">
                 <span className="size-1.5 rounded-full bg-aurora" />
                 Norrsken väntas i kväll 21:40
               </div>
-              <h2 className="font-display text-3xl leading-tight tracking-tight text-ink md:text-4xl">
+              <h2 className="font-display text-4xl leading-tight tracking-tight text-ink md:text-5xl">
                 Norrskenslarm
               </h2>
-              <p className="mt-3 max-w-md text-mist">
+              <p className="mt-3 max-w-md text-lg text-mist">
                 Vi bevakar himlens aktivitet hela natten och väcker dig med ett mjukt ljus och en
                 notis i telefonen när norrskenet tänds.
               </p>
@@ -341,7 +341,7 @@ function Index() {
                   setLarmAktivt(true);
                 }}
               >
-                <div className="mt-5 grid grid-cols-2 gap-3 text-sm">
+                <div className="mt-5 grid grid-cols-2 gap-3 text-base">
                   <Field label="Rum">
                     <input
                       type="text"
@@ -363,7 +363,7 @@ function Index() {
                     />
                   </Field>
                 </div>
-                <div className="mt-4 flex flex-wrap gap-2 text-xs text-ink/70">
+                <div className="mt-4 flex flex-wrap gap-2 text-sm text-ink/70">
                   <span className="glass-field rounded-full px-3 py-1">Mjuk väckning</span>
                   <span className="glass-field rounded-full px-3 py-1">Push-notis</span>
                   <span className="glass-field rounded-full px-3 py-1">SMS</span>
@@ -395,7 +395,7 @@ function Index() {
 
       {/* Footer */}
       <footer className="relative z-10 border-t border-frost/60">
-        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-2 px-6 py-8 text-sm text-mist sm:flex-row sm:items-center">
+        <div className="mx-auto flex max-w-6xl flex-col justify-between gap-2 px-6 py-8 text-base text-mist sm:flex-row sm:items-center">
           <p>Nordlys Fjällhotell · Abisko · reception@nordlys.se</p>
           <p className="text-mist/70">Receptionen är öppen dygnet runt</p>
         </div>
