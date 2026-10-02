@@ -58,12 +58,12 @@ const btnCls =
 function Index() {
   // Bastu
   const [bastuDatum, setBastuDatum] = useState("");
-  const [bastuTid, setBastuTid] = useState(bastuTider[0]);
+  const [bastuTid, setBastuTid] = useState<string>(bastuTider[0]);
   const [bastuGaster, setBastuGaster] = useState(2);
   const [bastuBokad, setBastuBokad] = useState(false);
 
   // Frukost
-  const [frukostTid, setFrukostTid] = useState(frukostTider[1]);
+  const [frukostTid, setFrukostTid] = useState<string>(frukostTider[1]);
   const [frukostVal, setFrukostVal] = useState<string[]>(["Rågbröd & gräddost"]);
   const [frukostRum, setFrukostRum] = useState("");
   const [frukostSkickad, setFrukostSkickad] = useState(false);
